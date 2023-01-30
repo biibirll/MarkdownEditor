@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "markdowneditor"
+version = "0.1.0"
+description = "A very simple Markdown editor written in Python (feat. Chat GPT)"
+authors = ["Gabriel Pires <gabriel.bonagio16@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+wxPython = "^4.2.0"
+markdown2 = "^2.4.7"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^5.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
