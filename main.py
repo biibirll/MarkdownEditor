@@ -1,3 +1,4 @@
+import sys
 import wx
 import wx.html2
 import markdown2
@@ -17,6 +18,13 @@ class MarkdownEditor(wx.Frame):
         right_pane = wx.html2.WebView.New(splitter)
         splitter.SplitVertically(left_pane, right_pane, 250)
         splitter.SetSashGravity(0.5)
+
+        if len(sys.argv) > 1:
+            with open(sys.argv[1], 'r') as f:
+                text = f.read()
+                left_pane.SetValue(text)
+                html = markdown2.markdown(text)
+                right_pane.SetPage(html, "")
 
         self.left_pane = left_pane
         self.right_pane = right_pane
